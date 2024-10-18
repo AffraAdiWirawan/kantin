@@ -1,0 +1,170 @@
+body {
+    background-color: #f8f8f8; /* Light gray */
+
+    font-family: "Ubuntu", sans-serif;
+    font-optical-sizing: auto;
+  }
+  /* CSS styles as defined above */
+  
+  #calculateRevenue {
+      background-color: #da0010;
+      border-color: #da0010;
+      color: white;
+      width: 200px;
+  }
+  
+  #resetRevenue {
+      background-color: #da0010;
+      border-color: #da0010;
+      color: white;
+      width: 200px;
+  }
+
+  #reloadData {
+    background-color: #da0010;
+    border-color: #da0010;
+    color: white;
+    width: 200px;
+}
+
+
+  #calculateRevenue:hover {
+    background-color: #da0010;
+    border-color: #da0010;
+
+}
+  
+  #resetRevenue:hover {
+    background-color: #da0010;
+    border-color: #da0010;
+  }
+  
+  #reloadData:hover {
+    background-color: #da0010;
+    border-color: #da0010;
+  }
+
+  /* Table header styling */
+  #topItemsTable th,
+  #topCustomersTable th {
+      background-color: #da0010;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+  }
+
+  #topItemsTable td,
+  #topCustomersTable td {
+      text-align: center;
+      vertical-align: middle;
+  }
+
+  /* Default logo size */
+.logo-container img {
+width: 100%; /* Makes the logo take full width of the container */
+max-width: 300px; /* Sets a maximum width */
+height: auto; /* Keeps the aspect ratio */
+}
+
+
+/* Sidebar styles */
+/* Sidebar styles */
+.sidebar {
+background-color: #da0010;
+height: 100vh;
+width: 120px; /* Normal width */
+padding: 20px;
+position: fixed;
+transition: transform 1s ease, width 1s ease; /* Smooth transition */
+display: flex;
+flex-direction: column;
+align-items: center; /* Center items horizontally */
+top: 0; /* Align to top */
+left: 0; /* Align to left */
+}
+
+/* Minimized state for sidebar */
+.sidebar.minimized {
+transform: translateX(-100%); /* Move completely out of view to the left */
+}
+
+/* Sidebar item styling */
+.sidebar-item {
+display: flex;
+flex-direction: column; /* Stack icon and text vertically */
+align-items: center; /* Center items */
+padding: 10px 0; /* Space between items */
+color: white; /* Set text color to white */
+text-decoration: none; /* Remove underline */
+transition: background 0.3s; /* Smooth background change */
+width: 100%; /* Take full width for better centering */
+}
+
+.sidebar-item:hover {
+background-color: #da0010; /* Darker red on hover */
+}
+
+.sidebar-icon {
+max-width: 30px; /* Size for the icons */
+margin-bottom: 5px; /* Space between icon and text */
+filter: brightness(0) invert(1); /* Make icon white */
+}
+
+/* Toggle button styling */
+.toggle-btn {
+background: none; /* Remove background */
+border: none; /* Remove border */
+outline: none; /* Remove outline */
+padding: 0; /* Remove padding */
+cursor: pointer; /* Make it a clickable button */
+position: absolute; /* Position it to the right */
+right: -30px; /* Position outside the sidebar */
+top: 20px; /* Adjust vertical position */
+transform: translateX(50%); /* Center the button */
+}
+
+.toggle-icon {
+max-width: 30px; /* Set the size of the image */
+}
+
+/* Content styles */
+.content {
+padding: 1px;
+transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+
+
+
+
+/* Media queries for mobile */
+@media (max-width: 768px) {
+.sidebar {
+    width: 70px; /* Adjust sidebar width for mobile */
+    height: 2000px;
+}
+
+.sidebar.minimized {
+    width: 0; /* No width when minimized for mobile */
+}
+#calculateRevenue {
+
+  width: 106px;
+}
+
+#resetRevenue {
+
+width: 106px;
+}
+
+#reloadData {
+
+width: 106px;
+}
+/* Default logo size */
+/* Default logo size */
+.logo-container {
+width: 200%; /* Makes the logo take full width of the container */
+
+}
+}

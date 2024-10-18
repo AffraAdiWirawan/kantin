@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI</title>
+    <link rel="stylesheet" href="style3.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h1>Chat with AI</h1>
+        <p>Siap Membantu Hari-hari Anda</p>
+    </div>
+    <div id="chatContainer"></div>
+    <textarea id="inputPrompt" placeholder="Masukkan Pertanyaan Anda"></textarea>
+    <button id="sendButton">Send</button>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const API_KEY = "AIzaSyDfjmSvom8myGKVvlN1Zti3-tAHM4QcR_A"; // Replace with your actual API key
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        document.getElementById('sendButton').addEventListener('click', async () => {
+            const prompt = document.getElementById('inputPrompt').value;
+            // Display user input
+            displayMessage(prompt, 'user');
+            
+            const result = await model.generateContent(prompt);
+            const aiResponse = result.response.text();
+            // Display AI response
+            displayMessage(aiResponse, 'ai');
+            document.getElementById('inputPrompt').value = ''; // Clear input field
+        });
+
+        function displayMessage(message, type) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageBubble = document.createElement('div');
+            messageBubble.className = `bubble ${type}`;
+            messageBubble.innerText = message;
+            chatContainer.appendChild(messageBubble);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll
+        }
+    </script>
+</body>
+</html>
